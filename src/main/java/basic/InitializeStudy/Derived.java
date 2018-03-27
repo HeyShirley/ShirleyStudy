@@ -8,12 +8,12 @@ public class Derived extends Base {
         System.out.println("Derived static block");
     }
     {
-        System.out.println("Derived block");
+        System.out.println("Derived  block");
     }
     public Derived(){
-        System.out.println("Derived constructor");
+        System.out.println("Derived  constructor");
     }
-    public static void main(String[] args){
+    public static void main(String args[]){
         new Derived();
     }
 }

@@ -8,7 +8,7 @@ public class Base {
         System.out.println("Base static block");
     }
     {
-        System.out.println("Base block");
+        System.out.println("Base  block");
     }
     public Base(){
         System.out.println("Base constructor");
