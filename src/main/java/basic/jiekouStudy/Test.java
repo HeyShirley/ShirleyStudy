@@ -1,4 +1,4 @@
-package basic.jiekouStudy.jiekou;
+package basic.jiekouStudy;
 
 import java.util.ArrayList;
 

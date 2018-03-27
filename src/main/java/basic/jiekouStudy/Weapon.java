@@ -1,4 +1,4 @@
-package basic.jiekouStudy.jiekou;
+package basic.jiekouStudy;
 
 /**
  * 武器
