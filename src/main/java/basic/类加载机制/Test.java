@@ -1,27 +1,18 @@
 package basic.类加载机制;
 
+import java.util.ArrayList;
+
 /**
  * Created by zhaoxueyu on 2018/3/29.
  */
-class SingleTon {
-    private static SingleTon singleTon = new SingleTon();
-    public static int count1;
-    public static int count2 = 0;
 
-    private SingleTon() {
-        count1++;
-        count2++;
-    }
+class CmdQueryPricePolicy{
 
-    public static SingleTon getInstance() {
-        return singleTon;
-    }
 }
 
 public class Test {
     public static void main(String[] args) {
-        SingleTon singleTon = SingleTon.getInstance();
-        System.out.println("count1=" + singleTon.count1);
-        System.out.println("count2=" + singleTon.count2);
+        System.out.println((CmdQueryPricePolicy.class.getName()).getClass());
+        System.out.println((CmdQueryPricePolicy.class.getSimpleName()).getClass());
     }
 }
