@@ -41,7 +41,7 @@ public class TableCreator {
                     else {
                         columnName = sInt.name();
                     }
-                    columnDefs.add(columnName + "INT" + getConstraints(sInt.constraints()));
+                    columnDefs.add(columnName + " INT" + getConstraints(sInt.constraints()));
                 }
                 if (anns[0] instanceof SqlString){
                     SqlString sString = (SqlString) anns[0];
