@@ -5,7 +5,7 @@ package basic.并发;
  */
 public class MainThread {
     public static void main(String[] args){
-//        LiftOff lauch = new LiftOff();
-//        lauch.run();
+        LiftOff lauch = new LiftOff();
+        lauch.run();
     }
 }

@@ -11,6 +11,4 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = TrackCounterConfig.class)
 public class TrackCounterTest {
-    @Rule
-    public final StandardOutputStreamLog systemOutRule = new StandardOutputStreamLog();
 }
