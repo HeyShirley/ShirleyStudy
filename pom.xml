@@ -34,6 +34,12 @@
 
 
     <dependencies>
+        <dependency>
+            <groupId>com.github.stefanbirkner</groupId>
+            <artifactId>system-rules</artifactId>
+            <version>1.16.0</version>
+            <scope>test</scope>
+        </dependency>
 
         <!-- ==============  -->
 
@@ -60,6 +66,7 @@
         </dependency>
 
         <!-- spring -->
+
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
@@ -170,6 +177,16 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit-dep</artifactId>
+            <version>4.10</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+        </dependency>
 
     </dependencies>
 
@@ -191,26 +208,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.20.1</version>
                 <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>${xml.file}</suiteXmlFile>
-                    </suiteXmlFiles>
                     <reportsDirectory>${testreportsDirectory}</reportsDirectory>
-                    <systemProperties>
-                        <property>
-                            <name>direction</name>
-                            <value>${direction}</value>
-                        </property>
-                        <property>
-                            <name>sub_direction</name>
-                            <value>${sub_direction}</value>
-                        </property>
-                        <property>
-                            <name>extend_direction</name>
-                            <value>${extend_direction}</value>
-                        </property>
-                    </systemProperties>
-
-
                 </configuration>
             </plugin>
 

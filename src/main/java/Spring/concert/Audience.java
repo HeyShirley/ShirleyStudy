@@ -1,5 +1,7 @@
 package Spring.concert;
 
+import com.sun.javafx.geom.AreaOp;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 
 /**
@@ -11,30 +13,19 @@ import org.aspectj.lang.annotation.*;
 public class Audience {
 
     @Pointcut("execution(* Spring.concert.Performance.perfom(..))")
-    public void perfomance(){
+    public void performance(){
     }
 
-    //表演之前
-    @Before("perfomance()")
-    public void silenceCellPhones(){
-        System.out.println("Silencing cell phones");
-    }
-
-    //表演之前
-    @Before("perfomance()")
-    public void takeSeats(){
-        System.out.println("Taking seats");
-    }
-
-    //表演之后
-    @AfterReturning("perfomance()")
-    public void applause(){
-        System.out.println("clap clap clap!!!");
-    }
-
-    //表演失败之后
-    @AfterThrowing("perfomance()")
-    public void demandRefund(){
-        System.out.println("clap clap clap!!!");
+    //@Around注解：环绕通知方法：
+    @Around("performance()")
+    public void watchPerformance(ProceedingJoinPoint jp){   //ProcceedingJoinPoint对象：通过该对象调用被通知方法
+        try {
+            System.out.println("Silencing cell phones");
+            System.out.println("Taking seats");
+            jp.proceed();   //若不调用proceed方法，会阻塞被通知方法的访问，即阻塞调用方调用Audience的watchPerformance方法。
+            System.out.println("CLAP CLAP CLAP!!!");
+        } catch (Throwable e){
+            System.out.println("Demanding a refund");
+        }
     }
 }
